@@ -3,7 +3,7 @@ pipeline {
   stages{
     stage("Initialize"){
       steps{
-        sh "pwd"
+        sh "pwd && rm -rf my-folder"
         sh "mkdir my-folder"
         sh "cd ./my-folder && pwd"
         sh "pwd"
