@@ -54,9 +54,9 @@ File1ExtraCompFails.forEach((fail)=> {
     fail.ExcelName = fail.ExcelName.slice(0,fail.ExcelName.indexOf("_result.xls"))
     fail.path = compPaths.filter((compPath)=> compPath.includes("/"+fail.ExcelName+".xls"))[0];
 
-    if(fail.path?.indexOf(".xlsx")){
+    if(fail.path.indexOf(".xlsx")){
         fail.path = fail.path.slice(0,-5)
-    }else if(fail.path?.indexOf(".xls")){
+    }else if(fail.path.indexOf(".xls")){
         fail.path = fail.path.slice(0,-4)
     }
 
@@ -90,9 +90,9 @@ File1ExtraFuncFails.forEach((fail)=> {
     fail.ExcelName = fail.ExcelName.slice(0,fail.ExcelName.indexOf("_result.xls"))
     fail.path = funcPaths.filter((funcPath)=> funcPath.includes("/"+fail.ExcelName+".xls"))[0];
     
-    if(fail.path?.indexOf(".xlsx")){
+    if(fail.path.indexOf(".xlsx")){
         fail.path = fail.path.slice(0,-5)
-    }else if(fail.path?.indexOf(".xls")){
+    }else if(fail.path.indexOf(".xls")){
         fail.path = fail.path.slice(0,-4)
     }
 
