@@ -8,9 +8,13 @@ pipeline {
             sh "ls"
             sh "node -v"
             sh "node ./ExcelComparator.js '../results/pv05.xls' '../results/pv07.xls'"
-            archiveArtifacts artifacts: '*.xls', followSymlinks: false
         }
       }
     }
   }
+  post {
+        always {
+            archiveArtifacts '*.xls'
+        }
+    }
 }
