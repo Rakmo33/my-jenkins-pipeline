@@ -11,8 +11,8 @@ pipeline {
             sh "node -v"
             script {
                  def artifacts = getArtifactsWithPrefixAndSuffix('my-jenkins-pipeline', 'pv', '.xls')
-                 sh "echo artifacts"
-                 sh "node ./ExcelComparator.js artifacts[0] artifacts[1]"
+                 sh "echo ${artifacts}"
+                 sh "node ./ExcelComparator.js ${artifacts[0]} ${artifacts[1]}"
             }     
         }
       }
