@@ -14,7 +14,7 @@ pipeline {
   }
   post {
         always {
-            archiveArtifacts '*.xls'
+            archiveArtifacts 'results/*.xls'
         }
     }
 }
