@@ -9,11 +9,11 @@ pipeline {
             sh "npm i"
             sh "ls"
             sh "node -v"
-          
-            sh "def artifacts = getArtifactsWithPrefixAndSuffix('my-jenkins-pipeline', 'pv', '.xls')"
-            sh "echo artifacts"
-            sh "node ./ExcelComparator.js artifacts[0] artifacts[1]"
-          
+            script {
+                 def artifacts = getArtifactsWithPrefixAndSuffix('my-jenkins-pipeline', 'pv', '.xls')
+                 sh "echo artifacts"
+                 sh "node ./ExcelComparator.js artifacts[0] artifacts[1]"
+            }     
         }
       }
     }
