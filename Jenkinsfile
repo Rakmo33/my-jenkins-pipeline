@@ -23,6 +23,7 @@ pipeline {
             archiveArtifacts 'results/*.xls'
         }
   }
+}
 
 
 def getArtifactsWithPrefixAndSuffix(String jobName, String prefix, String suffix) {
@@ -35,5 +36,4 @@ def getArtifactsWithPrefixAndSuffix(String jobName, String prefix, String suffix
         return filteredArtifacts.collect { "${SERVER_URL}/job/${jobName}/${buildInfo.getNumber()}/artifact/${it.relativePath}" }
     }
     return []
-}
 }
